@@ -22,15 +22,16 @@ public class StudentService {
         repository.deleteById(id);
     }
 
-    public List<Student> findByName(String name){
+    public List<Student> findByName(String name) {
         return repository.findByNameContainingIgnoreCase(name);
     }
 
-    public List<Student> getAll(){
+    public List<Student> getAll() {
         return repository.findAll();
     }
 
-    public Student getStudentById(int id){
+    public Student getStudentById(int id) {
         return repository.findById(id).orElse(null);
     }
+    //
 }
