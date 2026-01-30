@@ -1,5 +1,7 @@
 package com.example.schoolmanager.model;
 
+import java.util.UUID;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -7,8 +9,9 @@ import jakarta.persistence.*;
 public class Student {
 
     @Id
+    @Column(name = "id", columnDefinition = "uniqueidentifier")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private UUID id;
 
     private String name;
     private String email;
@@ -22,7 +25,7 @@ public class Student {
         this.email = email;
     }
 
-    public Integer getId() {
+    public UUID getId() {
         return id;
     }
 
@@ -42,7 +45,7 @@ public class Student {
         this.email = email;
     }
 
-    public void setId(Integer id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
